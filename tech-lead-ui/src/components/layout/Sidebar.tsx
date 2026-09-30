@@ -32,11 +32,11 @@ export const Sidebar: React.FC = () => {
   ];
 
   return (
-    <aside className="w-56 border-r border-zinc-800 bg-zinc-950 flex flex-col justify-between p-3 select-none">
+    <aside className="w-56 border-r border-slate-200/80 bg-white flex flex-col justify-between p-3 select-none shadow-[1px_0_2px_rgba(0,0,0,0.02)]">
       <div className="space-y-4">
         {/* Project Section */}
         <div className="px-2 py-1">
-          <div className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 font-semibold mb-2">
+          <div className="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-semibold mb-2">
             Project Navigation
           </div>
           <nav className="space-y-1">
@@ -49,22 +49,16 @@ export const Sidebar: React.FC = () => {
                   href={item.href}
                   className={`flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-medium transition ${
                     isActive
-                      ? "bg-zinc-800 text-zinc-100 font-semibold"
-                      : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/80"
+                      ? "bg-indigo-50/80 text-indigo-700 font-semibold border border-indigo-100"
+                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
                   }`}
                 >
                   <div className="flex items-center space-x-2.5">
-                    <Icon className={`w-4 h-4 ${isActive ? "text-indigo-400" : "text-zinc-400"}`} />
+                    <Icon className={`w-4 h-4 ${isActive ? "text-indigo-600" : "text-slate-400"}`} />
                     <span>{item.label}</span>
                   </div>
                   {item.badge && (
-                    <span
-                      className={`text-[10px] font-mono px-1.5 py-0.2 rounded-full ${
-                        item.label === "Blockers"
-                          ? "bg-rose-500/20 text-rose-400 font-bold"
-                          : "bg-zinc-800 text-zinc-400"
-                      }`}
-                    >
+                    <span className="text-[10px] font-mono bg-slate-100 text-slate-600 px-1.5 py-0.2 rounded font-semibold border border-slate-200">
                       {item.badge}
                     </span>
                   )}
@@ -75,35 +69,37 @@ export const Sidebar: React.FC = () => {
         </div>
 
         {/* Workstreams */}
-        <div className="px-2 pt-2 border-t border-zinc-900">
-          <div className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 font-semibold mb-2">
-            Workstreams
+        <div className="px-2 pt-2 border-t border-slate-100">
+          <div className="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-semibold mb-2">
+            Active Workstreams
           </div>
-          <div className="space-y-1 text-xs text-zinc-400">
-            <div className="px-2 py-1 hover:bg-zinc-900 rounded cursor-pointer flex items-center justify-between">
-              <span className="truncate">Core DMS API</span>
-              <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            </div>
-            <div className="px-2 py-1 hover:bg-zinc-900 rounded cursor-pointer flex items-center justify-between">
-              <span className="truncate">Async Worker</span>
-              <span className="w-2 h-2 rounded-full bg-rose-400" />
-            </div>
-            <div className="px-2 py-1 hover:bg-zinc-900 rounded cursor-pointer flex items-center justify-between">
+          <div className="space-y-1 text-xs text-slate-600">
+            <div className="flex items-center justify-between px-2 py-1 rounded hover:bg-slate-50 cursor-pointer">
               <span className="truncate">Frontend UI</span>
-              <span className="w-2 h-2 rounded-full bg-rose-400" />
+              <span className="w-2 h-2 rounded-full bg-rose-500" title="Blocked" />
             </div>
-            <div className="px-2 py-1 hover:bg-zinc-900 rounded cursor-pointer flex items-center justify-between">
-              <span className="truncate">Infra & SRE</span>
-              <span className="w-2 h-2 rounded-full bg-amber-400" />
+            <div className="flex items-center justify-between px-2 py-1 rounded hover:bg-slate-50 cursor-pointer">
+              <span className="truncate">AI Worker Pool</span>
+              <span className="w-2 h-2 rounded-full bg-amber-500" title="At Risk" />
+            </div>
+            <div className="flex items-center justify-between px-2 py-1 rounded hover:bg-slate-50 cursor-pointer">
+              <span className="truncate">Core API & DB</span>
+              <span className="w-2 h-2 rounded-full bg-emerald-500" title="Green" />
             </div>
           </div>
         </div>
       </div>
 
       {/* Footer Info */}
-      <div className="px-2 pt-3 border-t border-zinc-900 text-[11px] text-zinc-400 flex items-center justify-between">
-        <span>Tech Lead OS v1.0</span>
-        <span className="text-[10px] font-mono text-emerald-500">● LIVE</span>
+      <div className="pt-3 border-t border-slate-100 px-2 space-y-1 text-[11px] text-slate-400 font-mono">
+        <div className="flex items-center justify-between">
+          <span>Mode</span>
+          <span className="text-emerald-700 bg-emerald-50 border border-emerald-200 px-1 rounded">Read-Only</span>
+        </div>
+        <div className="flex items-center justify-between">
+          <span>Version</span>
+          <span>v1.0.0-mvp</span>
+        </div>
       </div>
     </aside>
   );

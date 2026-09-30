@@ -45,7 +45,7 @@ export const InteractiveGraph: React.FC<InteractiveGraphProps> = ({
   };
 
   return (
-    <div className="w-full h-[600px] bg-zinc-950 border border-zinc-800 rounded-xl overflow-hidden relative">
+    <div className="w-full h-[600px] bg-white border border-slate-200 rounded-xl overflow-hidden relative">
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -56,7 +56,7 @@ export const InteractiveGraph: React.FC<InteractiveGraphProps> = ({
         fitView
       >
         <Background color="#27272a" gap={16} />
-        <Controls className="!bg-zinc-900 !border-zinc-800 !text-zinc-300" />
+        <Controls className="!bg-slate-50 !border-slate-200 !text-slate-700" />
         <MiniMap
           nodeColor={(n) => {
             if ((n.data as any)?.status === "BLOCKED") return "#ef4444";
@@ -64,10 +64,10 @@ export const InteractiveGraph: React.FC<InteractiveGraphProps> = ({
             if ((n.data as any)?.status === "CONFLICT") return "#8b5cf6";
             return "#3b82f6";
           }}
-          className="!bg-zinc-900 !border-zinc-800"
+          className="!bg-slate-50 !border-slate-200"
         />
       </ReactFlow>
-      <div className="absolute top-3 left-3 bg-zinc-900/90 backdrop-blur border border-zinc-800 px-3 py-1.5 rounded-lg text-xs font-mono text-zinc-300 pointer-events-none">
+      <div className="absolute top-3 left-3 bg-slate-50/90 backdrop-blur border border-slate-200 px-3 py-1.5 rounded-lg text-xs font-mono text-slate-700 pointer-events-none">
         Click any node to inspect evidence in the inspector drawer
       </div>
     </div>

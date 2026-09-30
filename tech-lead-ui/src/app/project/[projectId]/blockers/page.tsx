@@ -15,26 +15,26 @@ export default function BlockersPage() {
 
   return (
     <div className="max-w-6xl mx-auto space-y-5">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-zinc-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-200">
         <div>
-          <h1 className="text-xl font-bold text-zinc-100">Active Project Blockers</h1>
-          <p className="text-xs text-zinc-400 mt-0.5">
+          <h1 className="text-xl font-bold text-slate-900">Active Project Blockers</h1>
+          <p className="text-xs text-slate-500 mt-0.5">
             Actively preventing progress on PRT launch milestones. Grounded across Jira tickets, GitHub PRs, and Slack discussions.
           </p>
         </div>
 
         <div className="flex items-center space-x-2">
-          <div className="flex items-center space-x-1 bg-zinc-900 border border-zinc-800 rounded-md px-2.5 py-1 text-xs">
-            <Filter className="w-3.5 h-3.5 text-zinc-400 mr-1" />
+          <div className="flex items-center space-x-1 bg-slate-50 border border-slate-200 rounded-md px-2.5 py-1 text-xs">
+            <Filter className="w-3.5 h-3.5 text-slate-500 mr-1" />
             <select
               value={filterOwner}
               onChange={(e) => setFilterOwner(e.target.value)}
-              className="bg-transparent text-zinc-200 focus:outline-none"
+              className="bg-transparent text-slate-800 focus:outline-none"
             >
-              <option value="ALL" className="bg-zinc-900">All Owners</option>
-              <option value="Ivan" className="bg-zinc-900">@Ivan</option>
-              <option value="Zhuo" className="bg-zinc-900">@Zhuo</option>
-              <option value="Jonathan" className="bg-zinc-900">@Jonathan</option>
+              <option value="ALL" className="bg-slate-50">All Owners</option>
+              <option value="Ivan" className="bg-slate-50">@Ivan</option>
+              <option value="Zhuo" className="bg-slate-50">@Zhuo</option>
+              <option value="Jonathan" className="bg-slate-50">@Jonathan</option>
             </select>
           </div>
 

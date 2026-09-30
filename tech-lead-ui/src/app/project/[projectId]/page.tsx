@@ -28,16 +28,16 @@ export default function ProjectOverviewPage() {
   return (
     <div className="max-w-6xl mx-auto space-y-6">
       {/* Top Banner / Milestone Counters */}
-      <div className="bg-zinc-950 border border-zinc-800 rounded-xl p-5 space-y-4">
+      <div className="bg-white border border-slate-200 rounded-xl p-5 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <div className="flex items-center space-x-2">
-              <h1 className="text-xl font-bold text-zinc-100">{MOCK_PROJECT.name}</h1>
+              <h1 className="text-xl font-bold text-slate-900">{MOCK_PROJECT.name}</h1>
               <span className="text-xs bg-indigo-500/10 text-indigo-400 font-mono px-2 py-0.5 rounded border border-indigo-500/20">
                 {MOCK_PROJECT.currentMilestone}
               </span>
             </div>
-            <p className="text-xs text-zinc-400 mt-1">
+            <p className="text-xs text-slate-500 mt-1">
               Cross-system operational state consolidated from Jira, GitHub, Slack, and Confluence.
             </p>
           </div>
@@ -45,7 +45,7 @@ export default function ProjectOverviewPage() {
           <div className="flex items-center space-x-2">
             <Link
               href="/project/ai-doc-split/visuals"
-              className="text-xs bg-zinc-900 hover:bg-zinc-800 text-zinc-200 px-3 py-1.5 rounded-md border border-zinc-800 transition flex items-center"
+              className="text-xs bg-slate-50 hover:bg-slate-100 text-slate-800 px-3 py-1.5 rounded-md border border-slate-200 transition flex items-center"
             >
               Visualize Project Graph
             </Link>
@@ -63,9 +63,9 @@ export default function ProjectOverviewPage() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
           <Link
             href="/project/ai-doc-split/blockers"
-            className="bg-zinc-900/60 hover:bg-zinc-900 border border-zinc-800/80 rounded-lg p-3 transition"
+            className="bg-slate-50/60 hover:bg-slate-50 border border-slate-200/80 rounded-lg p-3 transition"
           >
-            <div className="flex items-center justify-between text-xs text-zinc-400">
+            <div className="flex items-center justify-between text-xs text-slate-500">
               <span>Active Blockers</span>
               <AlertOctagon className="w-4 h-4 text-rose-400" />
             </div>
@@ -76,9 +76,9 @@ export default function ProjectOverviewPage() {
 
           <Link
             href="/project/ai-doc-split/risks"
-            className="bg-zinc-900/60 hover:bg-zinc-900 border border-zinc-800/80 rounded-lg p-3 transition"
+            className="bg-slate-50/60 hover:bg-slate-50 border border-slate-200/80 rounded-lg p-3 transition"
           >
-            <div className="flex items-center justify-between text-xs text-zinc-400">
+            <div className="flex items-center justify-between text-xs text-slate-500">
               <span>Identified Risks</span>
               <AlertTriangle className="w-4 h-4 text-amber-400" />
             </div>
@@ -89,9 +89,9 @@ export default function ProjectOverviewPage() {
 
           <Link
             href="/project/ai-doc-split/decisions"
-            className="bg-zinc-900/60 hover:bg-zinc-900 border border-zinc-800/80 rounded-lg p-3 transition"
+            className="bg-slate-50/60 hover:bg-slate-50 border border-slate-200/80 rounded-lg p-3 transition"
           >
-            <div className="flex items-center justify-between text-xs text-zinc-400">
+            <div className="flex items-center justify-between text-xs text-slate-500">
               <span>Pending Decisions</span>
               <GitCommit className="w-4 h-4 text-purple-400" />
             </div>
@@ -100,12 +100,12 @@ export default function ProjectOverviewPage() {
             </div>
           </Link>
 
-          <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-lg p-3">
-            <div className="flex items-center justify-between text-xs text-zinc-400">
+          <div className="bg-slate-50/60 border border-slate-200/80 rounded-lg p-3">
+            <div className="flex items-center justify-between text-xs text-slate-500">
               <span>Open Pull Requests</span>
               <GitPullRequest className="w-4 h-4 text-violet-400" />
             </div>
-            <div className="text-2xl font-bold font-mono text-zinc-200 mt-1">
+            <div className="text-2xl font-bold font-mono text-slate-800 mt-1">
               {MOCK_PROJECT.openPRCount}
             </div>
           </div>
@@ -119,7 +119,7 @@ export default function ProjectOverviewPage() {
             <h2 className="text-xs font-mono uppercase tracking-wider text-purple-400 font-semibold">
               Cross-Source Reality Gap
             </h2>
-            <span className="text-[11px] text-zinc-400">1 contradiction flagged by agent</span>
+            <span className="text-[11px] text-slate-500">1 contradiction flagged by agent</span>
           </div>
           <ConflictView conflict={MOCK_CONFLICTS[0]} />
         </section>
@@ -129,8 +129,8 @@ export default function ProjectOverviewPage() {
       <section className="space-y-3">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-sm font-semibold text-zinc-100">Needs Your Immediate Attention</h2>
-            <p className="text-xs text-zinc-400">Critical blockers actively stalling PRT Launch</p>
+            <h2 className="text-sm font-semibold text-slate-900">Needs Your Immediate Attention</h2>
+            <p className="text-xs text-slate-500">Critical blockers actively stalling PRT Launch</p>
           </div>
           <Link
             href="/project/ai-doc-split/blockers"
@@ -152,8 +152,8 @@ export default function ProjectOverviewPage() {
       <section className="space-y-3">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-sm font-semibold text-zinc-100">Decisions Awaiting Resolution</h2>
-            <p className="text-xs text-zinc-400">Unblocking downstream technical milestones</p>
+            <h2 className="text-sm font-semibold text-slate-900">Decisions Awaiting Resolution</h2>
+            <p className="text-xs text-slate-500">Unblocking downstream technical milestones</p>
           </div>
           <Link
             href="/project/ai-doc-split/decisions"

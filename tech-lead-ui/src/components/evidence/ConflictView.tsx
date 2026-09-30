@@ -25,29 +25,29 @@ export const ConflictView: React.FC<{ conflict: Conflict }> = ({ conflict }) => 
         </span>
       </div>
 
-      <h4 className="text-sm font-semibold text-zinc-100">{conflict.title}</h4>
+      <h4 className="text-sm font-semibold text-slate-900">{conflict.title}</h4>
 
       {/* Contradicting Claims */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-        <div className="bg-zinc-950/80 border border-zinc-800 p-3 rounded-lg space-y-1">
+        <div className="bg-white/80 border border-slate-200 p-3 rounded-lg space-y-1">
           <div className="flex items-center justify-between">
             <SourceBadge sourceType={conflict.claimA.source} externalId={conflict.claimA.entityId} />
-            <span className="text-[10px] font-mono text-zinc-400">Claim A</span>
+            <span className="text-[10px] font-mono text-slate-500">Claim A</span>
           </div>
-          <p className="text-zinc-200 font-mono text-[11px] pt-1">{conflict.claimA.statement}</p>
+          <p className="text-slate-800 font-mono text-[11px] pt-1">{conflict.claimA.statement}</p>
         </div>
 
-        <div className="bg-zinc-950/80 border border-zinc-800 p-3 rounded-lg space-y-1">
+        <div className="bg-white/80 border border-slate-200 p-3 rounded-lg space-y-1">
           <div className="flex items-center justify-between">
             <SourceBadge sourceType={conflict.claimB.source} externalId={conflict.claimB.entityId} />
-            <span className="text-[10px] font-mono text-zinc-400">Claim B</span>
+            <span className="text-[10px] font-mono text-slate-500">Claim B</span>
           </div>
-          <p className="text-zinc-200 font-mono text-[11px] pt-1">{conflict.claimB.statement}</p>
+          <p className="text-slate-800 font-mono text-[11px] pt-1">{conflict.claimB.statement}</p>
         </div>
       </div>
 
       {/* Interpretation */}
-      <div className="text-xs text-zinc-300 leading-relaxed bg-zinc-900/60 p-2.5 rounded-lg border border-zinc-800/80">
+      <div className="text-xs text-slate-700 leading-relaxed bg-slate-50/60 p-2.5 rounded-lg border border-slate-200/80">
         <strong className="text-indigo-300 block mb-0.5">Agent Operational Diagnosis:</strong>
         {conflict.agentInterpretation}
       </div>
@@ -56,7 +56,7 @@ export const ConflictView: React.FC<{ conflict: Conflict }> = ({ conflict }) => 
       <div className="pt-2 border-t border-purple-500/20 flex items-center justify-between text-xs">
         <button
           onClick={() => openInspector(conflict.evidenceIds[0])}
-          className="text-zinc-400 hover:text-zinc-200 flex items-center transition"
+          className="text-slate-500 hover:text-slate-800 flex items-center transition"
         >
           <FileText className="w-3.5 h-3.5 mr-1" />
           <span>Inspect Supporting Evidence</span>

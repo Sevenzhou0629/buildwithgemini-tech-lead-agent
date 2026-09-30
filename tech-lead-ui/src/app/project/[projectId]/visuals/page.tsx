@@ -93,22 +93,22 @@ export default function VisualsPage() {
   return (
     <div className="max-w-6xl mx-auto space-y-5">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-zinc-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-200">
         <div>
-          <h1 className="text-xl font-bold text-zinc-100">Interactive Visualizations</h1>
-          <p className="text-xs text-zinc-400 mt-0.5">
+          <h1 className="text-xl font-bold text-slate-900">Interactive Visualizations</h1>
+          <p className="text-xs text-slate-500 mt-0.5">
             React Flow graph rendering derived directly from multi-source project evidence.
           </p>
         </div>
 
         {/* Tab switcher */}
-        <div className="flex items-center bg-zinc-900 border border-zinc-800 rounded-md p-0.5 text-xs">
+        <div className="flex items-center bg-slate-50 border border-slate-200 rounded-md p-0.5 text-xs">
           <button
             onClick={() => setActiveTab("architecture")}
             className={`px-3 py-1.5 rounded transition ${
               activeTab === "architecture"
-                ? "bg-zinc-800 text-zinc-100 font-semibold"
-                : "text-zinc-400 hover:text-zinc-200"
+                ? "bg-slate-100 text-slate-900 font-semibold"
+                : "text-slate-500 hover:text-slate-800"
             }`}
           >
             System Architecture
@@ -117,8 +117,8 @@ export default function VisualsPage() {
             onClick={() => setActiveTab("dependencies")}
             className={`px-3 py-1.5 rounded transition ${
               activeTab === "dependencies"
-                ? "bg-zinc-800 text-zinc-100 font-semibold"
-                : "text-zinc-400 hover:text-zinc-200"
+                ? "bg-slate-100 text-slate-900 font-semibold"
+                : "text-slate-500 hover:text-slate-800"
             }`}
           >
             Dependency Chains

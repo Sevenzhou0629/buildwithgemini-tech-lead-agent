@@ -56,14 +56,14 @@ export default function ChatConsolePage() {
   return (
     <div className="max-w-4xl mx-auto flex flex-col h-[calc(100vh-8.5rem)]">
       {/* Header */}
-      <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
+      <div className="flex items-center justify-between pb-3 border-b border-slate-200">
         <div className="flex items-center space-x-2.5">
           <div className="w-8 h-8 rounded-lg bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
             <Sparkles className="w-4 h-4" />
           </div>
           <div>
-            <h1 className="text-sm font-bold text-zinc-100">Tech Lead Agent Operational Console</h1>
-            <p className="text-xs text-zinc-400">
+            <h1 className="text-sm font-bold text-slate-900">Tech Lead Agent Operational Console</h1>
+            <p className="text-xs text-slate-500">
               Grounded cross-system reasoning across Jira, GitHub, Slack, and Confluence.
             </p>
           </div>
@@ -71,7 +71,7 @@ export default function ChatConsolePage() {
 
         <button
           onClick={() => setMessages(INITIAL_CHAT_MESSAGES)}
-          className="text-xs text-zinc-400 hover:text-zinc-200 flex items-center space-x-1"
+          className="text-xs text-slate-500 hover:text-slate-800 flex items-center space-x-1"
         >
           <RefreshCw className="w-3.5 h-3.5" />
           <span>Reset conversation</span>
@@ -98,7 +98,7 @@ export default function ChatConsolePage() {
           <button
             key={idx}
             onClick={() => handleSend(qp)}
-            className="text-[11px] font-mono bg-zinc-950 hover:bg-zinc-800 text-zinc-300 px-2.5 py-1 rounded border border-zinc-800 transition"
+            className="text-[11px] font-mono bg-white hover:bg-slate-100 text-slate-700 px-2.5 py-1 rounded border border-slate-200 transition"
           >
             {qp}
           </button>
@@ -106,14 +106,14 @@ export default function ChatConsolePage() {
       </div>
 
       {/* Input box */}
-      <div className="bg-zinc-950 border border-zinc-800 rounded-xl p-2.5 flex items-center space-x-2 shadow-lg">
+      <div className="bg-white border border-slate-200 rounded-xl p-2.5 flex items-center space-x-2 shadow-lg">
         <input
           type="text"
           placeholder="Ask the Tech Lead Agent (e.g. 'Are we ready for production?', 'What is Ivan blocked on?')..."
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && handleSend()}
-          className="flex-1 bg-transparent px-2 py-1 text-xs text-zinc-100 placeholder:text-zinc-500 focus:outline-none"
+          className="flex-1 bg-transparent px-2 py-1 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none"
         />
         <button
           onClick={() => handleSend()}
